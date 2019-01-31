@@ -4,11 +4,10 @@ import numpy as np
 from sklearn.cluster import KMeans
 import argparse
 from utils import read_json, recreate_dir, thumbnail
+import shutil
 
 
-    
 
-    
 class Cluster():
     def __init__(self, feature_path, clustering_cnt, target_dir):
         self.feature_path = feature_path
@@ -40,6 +39,7 @@ class Cluster():
         np.random.shuffle(idx)
         self.file_list = self.file_list[idx]
         self.feature = self.feature[idx]
+        
         
 
     def train(self):
@@ -82,10 +82,10 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-#    C = Cluster(args.feature_path, args.clustering_cnt, args.target_dir)
-#    C.load_feature()
-#    C.train()
-#    C.centroid_distance()
-#    C.generate_target()
+    C = Cluster(args.feature_path, args.clustering_cnt, args.target_dir)
+    C.load_feature()
+    C.train()
+    C.centroid_distance()
+    C.generate_target()
     
     thumbnail(args.target_dir)

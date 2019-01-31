@@ -8,9 +8,8 @@ import sys
 from skimage.io import imread
 from skimage.transform import resize
 import argparse
-from utils import save_json, data_generator
+from utils import save_json, data_generator, EXPECT_SIZE
 
-EXPECT_SIZE = (299, 299, 3)
 EXTRACT_LAYER = 132
 SAVE_EVERY = 20
 

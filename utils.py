@@ -6,7 +6,7 @@ from skimage.io import imread, imsave
 from skimage.transform import resize
 import cv2
 
-
+EXPECT_SIZE = (299, 299, 3)
 
 def read_json(file):
     with open(file, 'r',encoding='utf-8') as f:  
